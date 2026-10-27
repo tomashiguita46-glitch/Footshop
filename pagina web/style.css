@@ -1,0 +1,611 @@
+/* ==========================================================================
+   1. RESET Y ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #111111;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. HEADER Y NAVEGACIÓN (INCLUYENDO ESTILOS DE LOGO)
+   ========================================================================== */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #2ecc71;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #2ecc71;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (PORTADA DE INICIO)
+   ========================================================================== */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero-bg.jpg') center/cover no-repeat;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.cta-button, #hero button, .productos-card button, .formulario-contacto button {
+    background-color: #2ecc71;
+    color: #000000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover, #hero button:hover, .productos-card button:hover, .formulario-contacto button:hover {
+    background-color: #27ae60;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. ESTRUCTURA GENERAL DE PÁGINAS INTERNAS
+   ========================================================================== */
+.seccion-pagina {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.seccion-pagina h1 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 3rem;
+}
+
+/* ==========================================================================
+   5. SECCIÓN DE PRODUCTOS Y CATÁLOGO
+   ========================================================================== */
+#productos {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+#productos h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #000000;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.productos-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.productos-card:hover {
+    transform: translateY(-5px);
+    border-color: #2ecc71;
+}
+
+.productos-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.productos-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE BENEFICIOS
+   ========================================================================== */
+#beneficios {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#beneficios h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+#beneficios p {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.lista-beneficios {
+    padding-left: 1.5rem;
+}
+
+.lista-beneficios li {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.lista-beneficios li::marker {
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.lista-beneficios li strong {
+    color: #000000;
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE TABLA DE INVENTARIO Y STOCK
+   ========================================================================== */
+#tabla-catalogo {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+#tabla-catalogo h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+#tabla-catalogo p {
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+th {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+td:last-child {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ==========================================================================
+   8. FORMULARIO DE CONTACTO Y DATOS DE ATENCIÓN DIRECTA
+   ========================================================================== */
+.grid-contacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.tarjeta-info-contacto {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.tarjeta-info-contacto h2 {
+    color: #000000;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #2ecc71;
+    padding-left: 10px;
+}
+
+.tarjeta-info-contacto p {
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+.lista-contacto-directo {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-contacto-directo li {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.lista-contacto-directo li strong {
+    color: #000000;
+}
+
+.formulario-contacto {
+    max-width: 600px;
+    margin: 4rem auto;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grid-contacto .formulario-contacto {
+    margin: 0;
+    width: 100%;
+}
+
+.formulario-contacto h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.formulario-contacto p {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-contacto label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #222222;
+    font-size: 0.9rem;
+}
+
+.formulario-contacto input {
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-contacto input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+}
+
+.formulario-contacto button[type="submit"] {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* ==========================================================================
+   9. SECCIÓN DE UBICACIÓN Y MAPA
+   ========================================================================== */
+#ubicacion {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+#ubicacion h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+#ubicacion p {
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+#ubicacion div {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+   10. PÁGINA "QUIÉNES SOMOS"
+   ========================================================================== */
+.contenido-quienes-somos {
+    text-align: left;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.texto-historia h2 {
+    font-size: 1.8rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    border-left: 4px solid #2ecc71;
+    padding-left: 10px;
+}
+
+.texto-historia p {
+    font-size: 1.05rem;
+    color: #444444;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.cajas-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #eeeeee;
+    padding-top: 2.5rem;
+}
+
+.tarjeta-valor h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-valor p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   11. PÁGINA DE "SERVICIOS"
+   ========================================================================== */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-servicio {
+    background: #ffffff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    border-color: #2ecc71;
+}
+
+.icono-servicio {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-servicio h3 {
+    font-size: 1.25rem;
+    color: #000000;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-servicio p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   12. FOOTER / PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    border-top: 2px solid #2ecc71;
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-columna h3 {
+    color: #2ecc71;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-columna p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.redes-sociales a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #2ecc71;
+}
+
+.footer-copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #222222;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-copyright p {
+    color: #888888;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   13. DISEÑO RESPONSIVO (MÓVILES Y TABLETAS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .formulario-contacto, #beneficios, .contenido-quienes-somos {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+}
